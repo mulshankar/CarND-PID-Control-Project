@@ -37,7 +37,7 @@ int main()
   
   double Kp_init=-0.08;
   double Ki_init=0.0;//-0.02;
-  double Kd_init=0.0;
+  double Kd_init=-0.01;
   
   pid.Init(Kp_init,Ki_init,Kd_init);
 
