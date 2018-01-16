@@ -35,7 +35,7 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   
-  double Kp_init=-0.01;
+  double Kp_init=-0.05;
   double Ki_init=0;
   double Kd_init=0;
   
