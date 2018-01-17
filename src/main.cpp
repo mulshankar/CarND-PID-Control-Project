@@ -35,9 +35,9 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   
-  double Kp_init=-0.05;
-  double Ki_init=-0.005;//-0.02;
-  double Kd_init=-12.5;//0.02;
+  double Kp_init=-0.06;
+  double Ki_init=-0.001;//-0.02;
+  double Kd_init=-0.001;//0.02;
   
   pid.Init(Kp_init,Ki_init,Kd_init);
 
@@ -72,14 +72,14 @@ int main()
 		  
 		  /*----------throttle control----------------*/
 		  
-		  double thr_ff=0.3;
+		  double thr_ff=0.2;
 		  
-		  double Kp_thr=0.0;//0.1;
+		  double Kp_thr=0.1;
 		  double thr_fdbk=Kp_thr*fabs(cte);
 		  
 		  double thr_cmd_final=thr_ff-thr_fdbk;
 		  
-		  thr_cmd_final=std::max(0.01,thr_cmd_final);
+		  thr_cmd_final=std::max(0.03,thr_cmd_final);
 		  
 		  /*------------------------------------------*/
 
