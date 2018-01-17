@@ -74,7 +74,7 @@ int main()
 		  
 		  double thr_ff=0.3;
 		  
-		  double Kp_thr=0.1;
+		  double Kp_thr=0.0;//0.1;
 		  double thr_fdbk=Kp_thr*fabs(cte);
 		  
 		  double thr_cmd_final=thr_ff-thr_fdbk;
