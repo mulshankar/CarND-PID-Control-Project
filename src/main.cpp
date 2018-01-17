@@ -78,6 +78,8 @@ int main()
 		  double thr_fdbk=Kp_thr*cte;
 		  
 		  double thr_cmd_final=thr_ff-thr_fdbk;
+		  
+		  thr_cmd_final=min(0.1,thr_cmd_final);
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
