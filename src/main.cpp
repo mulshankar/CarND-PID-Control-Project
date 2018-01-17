@@ -72,14 +72,14 @@ int main()
 		  
 		  //throttle control
 		  
-		  double thr_ff=0.2;
+		  double thr_ff=0.3;
 		  
 		  double Kp_thr=0.1;
 		  double thr_fdbk=Kp_thr*cte;
 		  
 		  double thr_cmd_final=thr_ff-thr_fdbk;
 		  
-		  thr_cmd_final=std::min(0.1,thr_cmd_final);
+		  thr_cmd_final=std::max(0.1,thr_cmd_final);
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
