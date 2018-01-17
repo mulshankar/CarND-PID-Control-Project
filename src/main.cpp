@@ -35,7 +35,7 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   
-  double Kp_init=-0.06;
+  double Kp_init=-0.05;
   double Ki_init=0.0;//-0.02;
   double Kd_init=0.0;//0.02;
   
@@ -79,7 +79,7 @@ int main()
 		  
 		  double thr_cmd_final=thr_ff-thr_fdbk;
 		  
-		  thr_cmd_final=std::max(0.05,thr_cmd_final);
+		  thr_cmd_final=std::max(0.01,thr_cmd_final);
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
