@@ -35,7 +35,7 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   
-  double Kp_init=-0.06;
+  double Kp_init=-0.05;
   double Ki_init=-0.0002;//-0.02;
   double Kd_init=-0.001;//0.02;
   
@@ -84,7 +84,7 @@ int main()
 		  double desired_speed=15;
 		  double error_speed=speed-desired_speed;
 		  
-		  double thr_ff=0.2;		  
+		  double thr_ff=0.15;		  
 		  double Kp_thr=-0.01;
 		  
 		  double thr_fdbk=Kp_thr*(error_speed);
@@ -92,6 +92,7 @@ int main()
 		  double thr_cmd_final=thr_ff+thr_fdbk;
 		  
 		  thr_cmd_final=std::max(0.03,thr_cmd_final);
+		  thr_cmd_final=std::min(0.25,thr_cmd_final);
 		  
 		  /*------------------------------------------*/
 
