@@ -25,16 +25,16 @@ All the above gains work only if speed of the vehicle is controlled. In normal w
 ```
 /*----------throttle control----------------*/
 		  
-		  double thr_ff=0.2;
-		  
-		  double Kp_thr=0.1;
-		  double thr_fdbk=Kp_thr*fabs(cte);
-		  
-		  double thr_cmd_final=thr_ff-thr_fdbk;
-		  
-		  thr_cmd_final=std::max(0.03,thr_cmd_final);
-		  
-		  /*------------------------------------------*/
+double thr_ff=0.2;
+
+double Kp_thr=0.1;
+double thr_fdbk=Kp_thr*fabs(cte);
+
+double thr_cmd_final=thr_ff-thr_fdbk;
+
+thr_cmd_final=std::max(0.03,thr_cmd_final);
+
+/*------------------------------------------*/
 
 ```
 A feed-forward value of 0.2 was used to accelerate the vehicle. The final command is based on CTE but is always above 0.03 to ensure forward propogation. This worked well for this project.

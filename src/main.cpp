@@ -35,7 +35,7 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   
-  double Kp_init=-0.06;
+  double Kp_init=-0.05;
   double Ki_init=-0.0002;//-0.02;
   double Kd_init=-0.001;//0.02;
   
@@ -72,7 +72,7 @@ int main()
 		  
 		  /*----------throttle control----------------*/
 		  
-		  double thr_ff=0.2;
+		  double thr_ff=0.25;
 		  
 		  double Kp_thr=0.1;
 		  double thr_fdbk=Kp_thr*fabs(cte);
