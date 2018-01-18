@@ -70,7 +70,7 @@ int main()
 		  }
 		  
 		  else {
-			pid.Kp=-0.05;
+			pid.Kp=-0.06;
 		  }
 		  
 		  pid.UpdateError(cte);
