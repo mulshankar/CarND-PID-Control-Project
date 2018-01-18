@@ -16,7 +16,7 @@ The first actuator that was controlled was steer. The process of finding the gai
 
 Kp - the first mode of correction that was applied. It provides a simple mapping between the CTE to the steer value. Higher the Kp, faster the response but the system can beome unstable and oscillate if the value given is too high. Based on the CTE to steer value ratio, a value of -0.1 was chosen to begin with. Note that the steer value is in a direction opposite to that of the CTE. A car that is drifting right needs a steer correction to the left to bring it back on track. The gain selection was done based on the CTE. For low CTE, a value of -0.05 was sufficient. If the CTE became greater than 1.5 a heavier gain was applied as shown below. 
 
-'''
+```
 if (fabs(cte)>1.5) {		  
 pid.Kp=-0.065;
 }
@@ -25,7 +25,7 @@ else {
 pid.Kp=-0.05;
 }
 
-'''
+```
 
 Kd - Kd terms balances any oscillations that are caused by the Kp correction. The value of Kp and Kd balance out the oscillations while responding faster to the CTE. A value of -0.001 worked well for this project.
 
