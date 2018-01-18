@@ -72,7 +72,7 @@ int main()
 		  
 		  /*----------throttle control----------------*/
 		  
-		  double thr_ff=0.25;
+		  double thr_ff=0.2;
 		  
 		  double Kp_thr=0.1;
 		  double thr_fdbk=Kp_thr*fabs(cte);
