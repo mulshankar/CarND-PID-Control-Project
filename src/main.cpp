@@ -35,7 +35,7 @@ int main()
   PID pid;
   // TODO: Initialize the pid variable.
   
-  double Kp_init=-0.05;
+  double Kp_init=-0.06;
   double Ki_init=-0.0002;//-0.02;
   double Kd_init=-0.001;//0.02;
   
@@ -64,14 +64,14 @@ int main()
           * another PID controller to control the speed!
           */
 		  
-		  if (fabs(cte)>1.5) {
+		  /*if (fabs(cte)>1.5) {
 		  
 			pid.Kp=-0.07;
 		  }
 		  
 		  else {
 			pid.Kp=-0.04;
-		  }
+		  }*/
 		  
 		  pid.UpdateError(cte);
 		  steer_value=pid.TotalError();
@@ -81,12 +81,15 @@ int main()
 		  
 		  /*----------throttle control----------------*/
 		  
-		  double thr_ff=0.2;
+		  double desired_speed=15;
+		  double error_speed=speed-desired_speed;
 		  
-		  double Kp_thr=0.1;
-		  double thr_fdbk=Kp_thr*fabs(cte);
+		  double thr_ff=0.2;		  
+		  double Kp_thr=-0.01;
 		  
-		  double thr_cmd_final=thr_ff-thr_fdbk;
+		  double thr_fdbk=Kp_thr*(error_speed);
+		  
+		  double thr_cmd_final=thr_ff+thr_fdbk;
 		  
 		  thr_cmd_final=std::max(0.03,thr_cmd_final);
 		  
