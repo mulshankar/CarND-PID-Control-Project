@@ -66,11 +66,11 @@ int main()
 		  
 		  if (fabs(cte)>1.5) {
 		  
-			pid.Kp=-0.06;
+			pid.Kp=-0.065;
 		  }
 		  
 		  else {
-			pid.Kp=-0.04;
+			pid.Kp=-0.05;
 		  }
 		  
 		  pid.UpdateError(cte);
