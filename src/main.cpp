@@ -93,7 +93,7 @@ int main()
 		  
 		  error_speed=speed-desired_speed;
 		  
-		  double thr_ff=0.15;		  
+		  double thr_ff=0.1;		  
 		  double Kp_thr=-0.01;
 		  
 		  double thr_fdbk=Kp_thr*(error_speed);
