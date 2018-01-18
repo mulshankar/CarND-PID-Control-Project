@@ -81,8 +81,17 @@ int main()
 		  
 		  /*----------throttle control----------------*/
 		  
-		  double desired_speed=15;
-		  double error_speed=speed-desired_speed;
+		  double desired_speed;
+		  double error_speed;
+		  
+		  if (fabs(cte)<1.0){
+			desired_speed=15;
+		  }
+		  else {
+			desired_speed=5;
+		  }
+		  
+		  error_speed=speed-desired_speed;
 		  
 		  double thr_ff=0.15;		  
 		  double Kp_thr=-0.01;
