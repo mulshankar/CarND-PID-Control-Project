@@ -64,14 +64,14 @@ int main()
           * another PID controller to control the speed!
           */
 		  
-		  /*if (fabs(cte)>1.5) {
+		  if (fabs(cte)>1.5) {
 		  
 			pid.Kp=-0.07;
 		  }
 		  
 		  else {
 			pid.Kp=-0.04;
-		  }*/
+		  }
 		  
 		  pid.UpdateError(cte);
 		  steer_value=pid.TotalError();
