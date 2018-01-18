@@ -64,13 +64,13 @@ int main()
           * another PID controller to control the speed!
           */
 		  
-		  if (fabs(cte)>3.0) {
+		  if (fabs(cte)>2.5) {
 		  
 			pid.Kp=-0.07;
 		  }
 		  
 		  else {
-			pid.Kp=-0.06;
+			pid.Kp=-0.4;
 		  }
 		  
 		  pid.UpdateError(cte);
