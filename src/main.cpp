@@ -66,7 +66,7 @@ int main()
 		  
 		  if (fabs(cte)>1.5) {
 		  
-			pid.Kp=-0.07;
+			pid.Kp=-0.06;
 		  }
 		  
 		  else {
